@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+
+:root {
+    /* Primary Colors */
+    --pc-red: hsl(0, 78%, 62%);
+    --pc-cyan: hsl(180, 62%, 55%);
+    --pc-orange: hsl(34, 97%, 64%);
+    --pc-blue: hsl(212, 86%, 64%);
+
+    /* Neutral Colors */
+    --nc-veryDarkBlue: hsl(234, 12%, 34%);
+    --nc-greyishBlue: hsl(229, 6%, 66%);
+    --nc-veryLightGrey: hsl(0, 0%, 98%);
+
+    /* Font Weights */
+    --fw-extraLight: 200;
+    --fw-regular: 400;
+    --fw-semiBold: 600;
+
+    /* Drop shadows*/
+    --ds-card: drop-shadow(0 10px 10px hsla(212, 86%, 64%, 0.2));
+}
+
+
+
+/* MAIN STUFF */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    width: 600px;
+    margin: 90px 0;
+}
+header h1 {
+    margin-bottom: 20px;
+}
+
+.background {
+    z-index: -1;
+    position: fixed;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(163,165,174);
+    background: linear-gradient(0deg, hsl(0, 0%, 93%) 0%, white 100%);
+}
+/*/////////////////////////////////////////////////////////////*/
+
+
+
+/* COLUMNS */
+.column-container {
+    width: 1100px;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 90px;
+}
+
+.column-left, .column-middle, .column-right {
+    display: flex;
+    gap: 30px;
+}
+
+.column-left, .column-right { align-items: center; }
+.column-middle { flex-direction: column; }
+/*/////////////////////////////////////////////////////////////*/
+
+
+
+/* CARD */
+.card {
+    position: relative;
+    width: 280px;
+    height: 180px;
+    padding: 35px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    filter: var(--ds-card);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.icon {
+    margin-top: auto;
+    align-self: flex-end;
+}
+/*/////////////////////////////////////////////////////////////*/
+
+
+
+/* ACCENT LINES */
+.accent-line {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 5px;
+    width: 100%;
+}
+.cyan { background-color: var(--pc-cyan); }
+.red { background-color: var(--pc-red); }
+.orange { background-color: var(--pc-orange); }
+.blue { background-color: var(--pc-blue); }
+/*/////////////////////////////////////////////////////////////*/
+
+
+
+/* TYPOGRAPHY */
+span { font-size: inherit; }
+
+h1 { font-size: 38px; } 
+h2 { font-size: 24px; }
+header p { font-size: 18px; }
+
+.card p { line-height: 28px; }
+
+h1,h2,h3,h4,h5,h6 { color: var(--nc-veryDarkBlue); }
+p { color: var(--nc-greyishBlue); }
+
+.fw-extraLight { font-weight: var(--fw-extraLight); }
+.fw-semiBold { font-weight: var(--fw-semiBold); }
+/*/////////////////////////////////////////////////////////////*/
+
+
+
+@media screen and (max-width: 1110px) {
+    .column-container {
+        width: 350px;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header { width: 350px; }
+    h1 { font-size: 28px; }
+    header p { font-size: 17px;}
+}
